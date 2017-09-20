@@ -31,9 +31,9 @@ void Node::setChild(Node* child)
 
 
 
-bool Node::isParent(Node* check)
+bool Node::isParent(Node* potentialParent)
 {
-   return (check->child == this);
+   return (potentialParent->child == this);
 }
 
 //Genocide ------------------------------------------------------------

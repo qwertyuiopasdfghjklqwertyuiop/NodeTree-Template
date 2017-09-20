@@ -27,17 +27,18 @@ protected:
    Node* getPrev() { return this->prev; }
    Node* getSib() { return this->sib; }
    Node* getChild() { return this->child; }
+   void* getVar() { return NULL; }
 
    //Helpers
 protected:
-   bool isParent(Node* check);
+   bool isParent(Node* potentialParent);
    void killFamily(); // Recursively kills children and then ends himself
 private:
    void killFamily(int level);  //dont let main alter level
    void removeNodeFromTree();    //dissappear from siblings + parents (isolation)
 
    //Friends
-   friend class NodeTree;
+   friend class Node_Tree;
 };
 
 

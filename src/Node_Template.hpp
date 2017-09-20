@@ -15,7 +15,7 @@ public:
    
    //Getters
 public:
-   T getVar() { return tVar; }
+   virtual T getVar() { return tVar; }
 
    //Mutators
 public:

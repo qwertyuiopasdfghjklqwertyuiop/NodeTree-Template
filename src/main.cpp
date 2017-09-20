@@ -4,6 +4,7 @@
 
 #include "./Node.hpp"
 #include "./Node_Template.hpp"
+#include "./Node_Tree.hpp"
 
  int main(){
    srand(time(NULL)); // ooga booga
