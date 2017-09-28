@@ -10,10 +10,20 @@ private:
    Node* iter;
 
    //Constructor
-public:
+protected:
    Node_Tree(Node* head);
+   ~Node_Tree();
 
-   //Mutator
+
+   //Tree Mutator - Modifies adds members to this->iter
+private:
+   bool addSib(Node* sib);
+   bool addChild(Node* child);
+public:
+   bool createSib() { addSib( new Node() ); return true; }
+   bool createChild() { addChild( new Node() ); return true; }
+
+   //Iterator Mutator
    bool nextGen();
    bool prevGen();
    bool sib();

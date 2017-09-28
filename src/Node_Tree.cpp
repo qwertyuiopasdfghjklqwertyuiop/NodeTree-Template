@@ -1,10 +1,40 @@
-//#include "./Node_Tree.hpp"
+#include "./Node_Tree.hpp"
+
 class Node;
+
 Node_Tree::Node_Tree(Node* head)
 {
    this->head = head;
    this->iter = head;
 }
+
+Node_Tree::~Node_Tree()
+{
+   this->head->killFamily();
+}
+
+bool Node_Tree::addSib(Node* sib)
+{
+   // Add sibling unless already exists or is head
+   if(this->iter == this->head)
+      return false;
+   if(this->iter->sib)
+      return false;
+
+   this->iter->setSib(sib);
+   return true;
+}
+
+bool Node_Tree::addChild(Node* child)
+{
+   //Add child unless exists;
+   if(this->iter)
+      return false;
+   this->iter->Node::setChild(child);
+   return true;
+}
+
+
 
 bool Node_Tree::nextGen()
 {
